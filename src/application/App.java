@@ -8,6 +8,7 @@ import java.util.List;
 
 import service.CalculationService;
 import entities.*;
+import service.CalculationService;
 
 public class App {
     public static void main(String[] args) {
@@ -28,6 +29,12 @@ public class App {
         Product x = CalculationService.max(list);
         System.out.println("Most expensive: ");
         System.out.println(x);
+
+
+        System.out.println();
+        System.out.println("Complete List: ");
+        CalculationService.printList(list);
+        
 
         } catch (IOException e){
             System.out.println("Error: " + e.getMessage());

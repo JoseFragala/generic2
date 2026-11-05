@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.List;
+
 public class Product implements Comparable<Product> {
 
     private String name;
@@ -36,6 +38,4 @@ public class Product implements Comparable<Product> {
     }
 
 
-    
-    
 }

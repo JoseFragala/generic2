@@ -6,38 +6,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.CalculationService;
 import entities.*;
-import service.CalculationService;
+
 
 public class App {
     public static void main(String[] args) {
 
         List<Product> list = new ArrayList<>();
 
-        String path = "C:\\temp\\in.txt";
+        list.add(new Product("TV", 900.00));
+        list.add(new Product("Notebook", 1200.00));
+        list.add(new Product("Tablet", 450.00));
 
-        try(BufferedReader br = new BufferedReader(new FileReader(path))){
+        list.sort(new MyComparator());
 
-            String line = br.readLine();
-            while (line != null){
-                String[] fields= line.split(",");
-                list.add(new Product(fields[0], Double.parseDouble(fields[1])));
-                line = br.readLine();
-            }
-        
-        Product x = CalculationService.max(list);
-        System.out.println("Most expensive: ");
-        System.out.println(x);
-
-
-        System.out.println();
-        System.out.println("Complete List: ");
-        CalculationService.printList(list);
-        
-
-        } catch (IOException e){
-            System.out.println("Error: " + e.getMessage());
+        for (Product p : list) {
+            System.out.println(p);
         }
     }
 }

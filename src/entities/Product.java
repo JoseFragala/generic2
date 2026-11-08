@@ -2,7 +2,7 @@ package entities;
 
 import java.util.List;
 
-public class Product implements Comparable<Product> {
+public class Product{
 
     private String name;
     private Double price;
@@ -32,10 +32,7 @@ public class Product implements Comparable<Product> {
         return name + ", " + String.format("%.2f", price);
     }
 
-    @Override
-    public int compareTo(Product other) {
-        return price.compareTo(other.getPrice());
-    }
+   
 
 
 }
